@@ -23,8 +23,16 @@ Include one or more of the following snippets to display your recently played al
 
 ## Example 
 
+https://mirthe.org/albums
+
 <img src="example-albums.png" alt="Example albums">
+
+https://mirthe.org/albums/tracks
+
 <img src="example-tracks.png" alt="Example tracks">
+
+https://mirthe.org/albums/artists
+
 <img src="example-artists.png" alt="Example artists">
 
 ## Todo
