@@ -1,0 +1,13 @@
+{
+    "name": "mirthe/mylastfm",
+    "description": "Show recently played tracks and albums for a LastFM account",
+    "keywords": ["kirby-plugin", "lastfm", "music", "history", "log"],
+    "type": "kirby-plugin",
+    "license": "MIT",
+    "authors": [    
+        {
+            "name": "Mirthe Valentijn",
+            "email": "me@Mirthe.org"
+        }
+    ]
+}
