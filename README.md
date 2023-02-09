@@ -17,20 +17,20 @@ Add your LastFM API key and username to your config
 
 Include one or more of the following snippets to display your recently played albums, tracks or favorite artists on a page
 
-### Albums played
-<p><?php snippet('lastfm-albums-played'); ?></p>
-    
-### Recent tracks
-<p><?php snippet('lastfm-recenttracks'); ?></p>
-    
-### Top artists
-<p><?php snippet('lastfm-topartists'); ?></p>
+    <?php snippet('lastfm-albums-played'); ?>
+    <?php snippet('lastfm-recenttracks'); ?>
+    <?php snippet('lastfm-topartists'); ?>
 
 ## Example 
 
-<img src="example-albums.png" alt="Example albums">
-<img src="example-tracks.png" alt="Example tracks">
-<img src="example-artists.png" alt="Example artists">
+### Albums played
+<p><img src="example-albums.png" alt="Example albums"></p>
+
+### Recent tracks
+<p><img src="example-tracks.png" alt="Example tracks"></p>
+
+### Top artists
+<p><img src="example-artists.png" alt="Example artists"></p>
 
 ## Todo
 
