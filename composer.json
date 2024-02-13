@@ -1,6 +1,6 @@
 {
     "name": "mirthe/kirby_mylastfm",
-    "version": "1.0",
+    "version": "1.1.0",
     "description": "Show recently played tracks and albums for a LastFM account",
     "homepage": "https://github.com/mirthe/kirby_mylastfm",
     "keywords": ["kirby-plugin", "lastfm", "music", "history", "log"],

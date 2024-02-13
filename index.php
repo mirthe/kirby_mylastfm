@@ -8,6 +8,7 @@ Kirby::plugin('mirthe/mylastfm', [
     'snippets' => [
         'lastfm-albums-played' => __DIR__ . '/snippets/albums.php',
         'lastfm-recenttracks' => __DIR__ . '/snippets/tracks.php',
+        'lastfm-recenttracks-short' => __DIR__ . '/snippets/tracks-list.php',
         'lastfm-topartists' => __DIR__ . '/snippets/artists.php'
 
         // getTopArtists toevoegen?
