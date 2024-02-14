@@ -21,6 +21,10 @@ Include one or more of the following snippets to display your recently played al
     <?php snippet('lastfm-recenttracks'); ?>
     <?php snippet('lastfm-topartists'); ?>
 
+Recently added a compact listing for my Now page, with an optional limit
+
+    <?php snippet('lastfm-recenttracks-short', ['limit' => 3 ]) ?>
+
 ## Example 
 
 ### Albums played
