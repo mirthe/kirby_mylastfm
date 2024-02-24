@@ -25,6 +25,10 @@ Recently added a compact listing for my Now page, with an optional limit
 
     <?php snippet('lastfm-recenttracks-short', ['limit' => 3 ]) ?>
 
+And an alternative version of this, using Wikipedia for band imgs. Handles ambiguity quite poorly, be warned.
+
+    <?php snippet('lastfm-recenttracks-imgs', ['limit' => 3 ]) ?>
+
 ## Example 
 
 ### Albums played
