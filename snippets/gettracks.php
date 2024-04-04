@@ -5,13 +5,13 @@
      $username = option('lastfm.username');
      $localfile =  __DIR__ . "/lastfm-tracks.xml";
      $feedurl = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=$username&api_key=$apikey&format=xml&limit=50";
- 
-     if (!file_exists($localfile) OR time()-filemtime($localfile) > 2 * 3600 OR isset($_GET['forcecache'])) {
-         
+
+     if (!file_exists($localfile) || time()-filemtime($localfile) > 600 || isset($_GET['forcecache'])) {
+    // when file is not available, older than 10 minutes, or forced
+
          $ch = curl_init();
          curl_setopt($ch, CURLOPT_URL, $feedurl);
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-         // curl_setopt($ch, CURLOPT_USERAGENT, "Mirthe.org");
          
          $feeds = curl_exec($ch);
          curl_close($ch);
@@ -25,4 +25,3 @@
      }
    
     $rss = simplexml_load_string($feeds);
-?>

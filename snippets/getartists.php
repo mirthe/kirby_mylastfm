@@ -6,8 +6,9 @@
      $localfile =  __DIR__ . "/lastfm-artists.xml";
      $feedurl = "http://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=$username&api_key=$apikey&format=xml&limit=30";
  
-     if (!file_exists($localfile) OR time()-filemtime($localfile) > 2 * 3600 OR isset($_GET['forcecache'])) {
-         
+     if (!file_exists($localfile) || time()-filemtime($localfile) > 3600 || isset($_GET['forcecache'])) {
+     // when file is not available, older than one hour, or forced
+
          $ch = curl_init();
          curl_setopt($ch, CURLOPT_URL, $feedurl);
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
