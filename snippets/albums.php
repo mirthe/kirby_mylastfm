@@ -12,8 +12,9 @@
         <?php endif ?>
         
         <div class="block--body">
-            <p><a href="<?= $item->url ?>"><?= $item->name ?></a> - <?= $item->artist->name ?><br>
-            <small class="subtiel"><?= $item->playcount ?> nummers gedraaid</small></p>
+            <p><a href="<?= $item->url ?>"><?= $item->name ?></a><br><?= $item->artist->name ?><br>
+            <!-- <small class="subtiel"><?= $item->playcount ?> nummers gedraaid</small> -->
+            </p>
         </div>
 
     </div>

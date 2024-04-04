@@ -1,5 +1,7 @@
 <?php include('getartists.php'); ?>
 
+<!-- TODO get image from Wikipedia? Last.fm is not offering one for bands.. -->
+
 <div class="masonry">
 <?php foreach($rss->topartists->artist as $item): ?>
 
