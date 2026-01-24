@@ -1,6 +1,6 @@
 <?php include('gettracks.php'); ?>
 
-<div class="masonry">
+<div class="grid">
 <?php $counter = 0;
 foreach($rss->recenttracks->track as $item):
   if ($counter == $limit) {break;} ?>

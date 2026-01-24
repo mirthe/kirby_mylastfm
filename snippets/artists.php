@@ -1,6 +1,6 @@
 <?php include('getartists.php'); ?>
 
-<div class="masonry">
+<div class="grid">
 <?php foreach($rss->topartists->artist as $item): ?>
 
     <?php // get image from Wikipedia. Last.fm is not offering one for bands..
@@ -14,12 +14,11 @@
     $output = curl_exec( $ch );
     curl_close( $ch );
 
-    $wikipage = json_decode($output,true);
-    // print_r($wikipage); ?>
+    $wikipage = json_decode($output,true); ?>
 
     <div class="block block--artist">
 
-        <?php if (empty($wikipage) || $wikipage['title'] == 'Not found.' || !key_exists('thumbnail',$wikipage)): ?>
+        <?php if (empty($wikipage) || !isset($wikipage['title']) || $wikipage['title'] == 'Not found.' || !key_exists('thumbnail',$wikipage)): ?>
             <a href="<?= $item->url ?>" class="block--fallback"></a>
         <?php else: ?>
             <a href="<?= $item->url ?>"

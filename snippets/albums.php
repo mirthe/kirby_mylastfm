@@ -1,6 +1,6 @@
 <?php include('getalbums.php'); ?>
 
-<div class="masonry">
+<div class="grid">
 <?php foreach($rss->topalbums->album as $item): ?>
 
     <div class="block block--album">

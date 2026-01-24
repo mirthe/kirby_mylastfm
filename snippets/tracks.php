@@ -1,7 +1,7 @@
 <?php include('gettracks.php');
 include('ago.php'); ?>
 
-<div class="masonry">
+<div class="grid">
 <?php foreach($rss->recenttracks->track as $item): ?>
 
     <div class="block block--track">
