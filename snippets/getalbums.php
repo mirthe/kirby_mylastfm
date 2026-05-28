@@ -5,26 +5,36 @@
 
      $apikey = option('lastfm.apiKey');
      $username = option('lastfm.username');
-     $localfile =  __DIR__ . "/lastfm-albums.xml";
+     $cacheSection = 'albums';
      $feedurl = "http://ws.audioscrobbler.com/2.0/?method=user.getTopAlbums&user=$username&api_key=$apikey&format=xml&period=7day&limit=30";
+     $cache = kirby()->cache('mirthe.mylastfm');
+     $cacheKey = 'lastfm-' . strtolower($username) . '-' . $cacheSection;
+     $feeds = $cache->get($cacheKey);
+     $force = isset($_GET['forcecache']);
  
-     if (!file_exists($localfile) || time()-filemtime($localfile) > 3600 || isset($_GET['forcecache'])) {
+     if ($feeds === null || $force) {
      // when file is not available, older than 10 minutes, or forced
 
+         $previousFeeds = $feeds;
          $ch = curl_init();
          curl_setopt($ch, CURLOPT_URL, $feedurl);
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
          curl_setopt($ch, CURLOPT_USERAGENT, kirby()->site()->title());
          
          $feeds = curl_exec($ch);
+         $error = curl_errno($ch);
          curl_close($ch);
          
-         $fp = fopen($localfile, 'w');
-         fwrite($fp, $feeds);
-         fclose($fp);
+         if ($feeds !== false && $error === 0 && $feeds !== '') {
+             $cache->set($cacheKey, $feeds, 3600);
+         } else {
+             $feeds = $previousFeeds;
+         }
  
-     } else {
-         $feeds = file_get_contents($localfile); 
+     }
+
+     if ($feeds === null) {
+         $feeds = '';
      }
    
     $rss = simplexml_load_string($feeds);

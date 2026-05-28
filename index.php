@@ -1,10 +1,9 @@
 <?php
 
 Kirby::plugin('mirthe/mylastfm', [
-    // 'options' => [
-    //     'apiKey'    => option('lastfm.apiKey'),
-    //     'username' => option('lastfm.username')
-    // ],
+    'options' => [
+        'cache' => true
+    ],
     'snippets' => [
         'lastfm-albums-played' => __DIR__ . '/snippets/albums.php',
         'lastfm-recenttracks' => __DIR__ . '/snippets/tracks.php',
