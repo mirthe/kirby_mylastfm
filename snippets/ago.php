@@ -16,4 +16,3 @@ function timeago($time, $tense = "ago"){
          }
        return "$difference $periods[$j] $tense ";
     }
-?>
