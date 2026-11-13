@@ -1,8 +1,8 @@
 <?php 
      // TODO limit opnemen als option
 
-     $apikey = option('lastfm.apiKey');
-     $username = option('lastfm.username');
+     $apikey = option('mirthe.mylastfm.apiKey');
+     $username = option('mirthe.mylastfm.username');
      $cacheSection = 'artists';
      $feedurl = "http://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=$username&api_key=$apikey&format=xml&limit=30";
      $cache = kirby()->cache('mirthe.mylastfm');

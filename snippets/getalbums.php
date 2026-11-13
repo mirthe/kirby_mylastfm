@@ -3,8 +3,8 @@
     
     // TODO limit en period opnemen als option
 
-     $apikey = option('lastfm.apiKey');
-     $username = option('lastfm.username');
+     $apikey = option('mirthe.mylastfm.apiKey');
+     $username = option('mirthe.mylastfm.username');
      $cacheSection = 'albums';
      $feedurl = "http://ws.audioscrobbler.com/2.0/?method=user.getTopAlbums&user=$username&api_key=$apikey&format=xml&period=7day&limit=30";
      $cache = kirby()->cache('mirthe.mylastfm');

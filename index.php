@@ -2,6 +2,8 @@
 
 Kirby::plugin('mirthe/mylastfm', [
     'options' => [
+        'apiKey' => option('lastfm.apiKey'),
+        'username' => option('lastfm.username'),
         'cache' => true
     ],
     'snippets' => [
